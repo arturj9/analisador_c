@@ -1,12 +1,4 @@
 from analisador_sintatico import analisador_sintatico
 
- # Example usage
-code = '''int main(){
-    int x = 5;
-    if(f && s){
-        x = 4;
-    }
-}
-'''
-
+code = open("example.txt", 'r', encoding='utf-8').read()
 analisador_sintatico(code)
