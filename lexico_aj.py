@@ -10,6 +10,7 @@ TOKENS = [
     {"token": "CHAVE_FECHA", "pattern": r"\}"},
     {"token": "PONTO_VIRGULA", "pattern": r";"},
     {"token": "ATRIBUICAO", "pattern": r"="},
+    {"token": "COMENTARIO", "pattern": r"//.*|/\*[\s\S]*?\*/"},
     {"token": "SOMA", "pattern": r"\+"},
     {"token": "SUBTRACAO", "pattern": r"-"},
     {"token": "MULTIPLICACAO", "pattern": r"\*"},
@@ -24,8 +25,7 @@ TOKENS = [
     {"token": "IDENTIFICADOR", "pattern": r"[a-zA-Z_][a-zA-Z0-9_]*"},
     {"token": "NUMERO", "pattern": r"\b\d+(\.\d+)?\b"},
     {"token": "ESPACO", "pattern": r"\s+"},
-    {"token": "VIRGULA", "pattern": r','},
-    {"token": "COMENTARIO", "pattern": r"//.*|/\*[\s\S]*?\*/"}
+    {"token": "VIRGULA", "pattern": r','}
 ]
 
 def analisador_lexico(input_string):
