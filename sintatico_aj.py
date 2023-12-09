@@ -28,7 +28,7 @@ def analisador_sintatico(code):
         return False
 
     def error(message):
-        raise Exception(f"Syntax Error: {message}")
+        raise Exception(f"Syntax Error: {message} in line {current_token['linha']}")
 
     # Parsing functions
     def parse_program(tree):
