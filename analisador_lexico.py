@@ -57,6 +57,7 @@ def analisador_lexico(input_string):
 
         if not matched:
             return f"Erro: Caractere inválido na linha {numero_linha}, posição {index}: {input_string[index]}"
+    print('\n\t\t\tTokens')
     for token in tokens_identificados:
         print(f"{{'token': '{token['token']}', 'value': '{token['value']}', 'linha': {token['linha']}}},")
     return tokens_identificados

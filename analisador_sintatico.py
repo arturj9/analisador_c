@@ -28,7 +28,7 @@ def analisador_sintatico(code):
         return False
 
     def error(message):
-        raise Exception(f"Syntax Error: {message} in line {current_token['linha']-1}")
+        raise Exception(f"Syntax Error: {message} in line {current_token['linha']}")
 
     # Parsing functions
     def parse_program(tree):
@@ -220,6 +220,7 @@ def analisador_sintatico(code):
         syntax_tree = parse_program(tree)
 
         # Print the syntax tree (for debugging purposes)
+        print('\n\t\tÁrvore Sintática')
         def print_tree(node, indent=0):
             print('  ' * indent + node.value)
             for child in node.children:
@@ -227,8 +228,10 @@ def analisador_sintatico(code):
 
 
         print_tree(syntax_tree)
-    except:
-        print(tokens)
+    except AttributeError:
+        print(f'\n{tokens}')
+    except Exception as e:
+        print(f'\n{e}')
         
 
 

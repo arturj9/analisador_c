@@ -1,6 +1,6 @@
 int main(){
     int x = 5; //comentario 
     if(f && s){ 
-        x = 4
+        x = 4;
     }
 }
