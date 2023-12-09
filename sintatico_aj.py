@@ -28,7 +28,7 @@ def analisador_sintatico(code):
         return False
 
     def error(message):
-        raise Exception(f"Syntax Error: {message} in line {current_token['linha']}")
+        raise Exception(f"Syntax Error: {message} in line {current_token['linha']-1}")
 
     # Parsing functions
     def parse_program(tree):
@@ -215,15 +215,21 @@ def analisador_sintatico(code):
             error("Expected number in <number>")
 
     tokens = analisador_lexico(code)
-    current_token = tokens.pop(0)
+    try:
+        current_token = tokens.pop(0)
+        syntax_tree = parse_program(tree)
 
-    syntax_tree = parse_program(tree)
-
-    # Print the syntax tree (for debugging purposes)
-    def print_tree(node, indent=0):
-        print('  ' * indent + node.value)
-        for child in node.children:
-            print_tree(child, indent + 1)
+        # Print the syntax tree (for debugging purposes)
+        def print_tree(node, indent=0):
+            print('  ' * indent + node.value)
+            for child in node.children:
+                print_tree(child, indent + 1)
 
 
-    print_tree(syntax_tree)
+        print_tree(syntax_tree)
+    except:
+        print(tokens)
+        
+
+
+    
