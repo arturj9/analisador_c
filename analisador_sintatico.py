@@ -1,4 +1,4 @@
-from lexico_aj import analisador_lexico
+from analisador_lexico import analisador_lexico
 
 def analisador_sintatico(code):
 

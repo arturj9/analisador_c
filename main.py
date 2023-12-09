@@ -1,4 +1,4 @@
-from sintatico_aj import analisador_sintatico
+from analisador_sintatico import analisador_sintatico
 
  # Example usage
 code = '''int main(){
