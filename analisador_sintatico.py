@@ -69,7 +69,6 @@ def analisador_sintatico(code):
         parse_declarator(subtree)
         if not match('PARENTESE_ABRE'):
             error("Expected '(' in <function_definition>")
-        # parse_parameter_list()
         if not match('PARENTESE_FECHA'):
             error("Expected ')' in <function_definition>")
         parse_compound_statement(subtree)
@@ -144,13 +143,7 @@ def analisador_sintatico(code):
             error("Expected 'for' in <for_loop_statement>")
         if not match('PARENTESE_ABRE'):
             error("Expected '(' in <for_loop_statement>")
-        # parse_assignment_statement()
-        # if not match('PONTO_VIRGULA'):
-        #     error("Expected ';' in <for_loop_statement>")
         parse_logical_expression(subtree)
-        # if not match('PONTO_VIRGULA'):
-        #     error("Expected ';' in <for_loop_statement>")
-        # parse_assignment_statement()
         if not match('PARENTESE_FECHA'):
             error("Expected ')' in <for_loop_statement>")
         parse_compound_statement(subtree)
@@ -225,7 +218,6 @@ def analisador_sintatico(code):
             print('  ' * indent + node.value)
             for child in node.children:
                 print_tree(child, indent + 1)
-
 
         print_tree(syntax_tree)
     except AttributeError:
