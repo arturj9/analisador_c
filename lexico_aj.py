@@ -36,22 +36,10 @@ def analisador_lexico(input_string):
     while index < len(input_string):
         matched = False
 
-        # Ignorar espaços em branco e comentários
-        if input_string[index] in [" ", "\t", "\r", "\n"]:
-            index += 1
-            continue
-        elif input_string[index:index + 2] == "//":
-            index = input_string.find("\n", index)
-            if index == -1:
-                break
+        # Verifica se é uma quebra de linha e atualiza o contador de linhas
+        if input_string[index] == "\n":
             numero_linha += 1
             index += 1
-            continue
-        elif input_string[index:index + 2] == "/*":
-            index = input_string.find("*/", index)
-            if index == -1:
-                return f"Erro: Comentário não fechado na linha {numero_linha}, posição {index + 2}"
-            index += 2
             continue
 
         for token_info in TOKENS:
