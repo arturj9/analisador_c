@@ -3,7 +3,7 @@
 Neste repositório possui um Analisador Léxico, que analisa o código C e divide o texto em unidades chamadas tokens, e um Analisador Sintático, que analisa a estrutura gramatical do código e vai construir uma representação interna chamada de árvore sintática ou parse tree.
 
 ## Equipe
-@arturj9
+@arturj9\n
 @DyingFlower
 @GuialvesTD
 @Jonathan-Fernandes-Costa
